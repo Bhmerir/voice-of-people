@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
+//This route is responsible for loging in and it checks if password is correct or no
 router.post("/login", async (req, res) => {
     try {
         const userData = await User.findOne({where: { user_name: req.body.user_name }});
@@ -26,6 +27,7 @@ router.post("/login", async (req, res) => {
     }
 });
 
+//This route is responsible for signing up 
 router.post("/signup", async (req, res) => {
     try {
         /*This part checks if the user name is taken before or not. 
@@ -46,5 +48,16 @@ router.post("/signup", async (req, res) => {
         res.status(400).json(err);
       }
 });
+
+//This post is responsible for logingout
+router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  });
 
 module.exports = router;
