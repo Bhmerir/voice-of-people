@@ -20,9 +20,9 @@ router.get('/', async(req, res) =>{
           posts,
           logged_in: req.session.logged_in,
         });*/
-      } catch (err) {
+    } catch (err) {
         res.status(500).json(err);
-      }
+    }
 });
 
 //This route shows all posts of a specific user (while clicking dashboard)
@@ -43,9 +43,9 @@ router.get('/dashboard', withAuth, async(req, res) =>{
           posts,
           logged_in: req.session.logged_in,
         });*/
-      } catch (err) {
+    } catch (err) {
         res.status(500).json(err);
-      }
+    }
 });
 
 //This route shows a specific post of a specific user 
@@ -64,9 +64,55 @@ router.get("/api/posts/:id", withAuth, async(req, res) =>{
           postData,
           logged_in: req.session.logged_in,
         });*/
-      } catch (err) {
+    } catch (err) {
         res.status(500).json(err);
-      }
+    }
+});
+
+//This route shows all comments of a specific post 
+router.get("/api/comments/:id", withAuth, async(req, res) =>{
+    try {
+        const commentData = await Comment.findAll({
+            include: [{ 
+                    model: User,
+                    attributes: ['user_name']
+                },
+                { 
+                    model: Post
+                }
+            ],
+            where: { post_id: req.params.id},
+            order: [['date_created', 'DESC']],
+        });
+        console.log(commentData)
+        const comments = commentData.map((comment) => comment.get({ plain: true }));
+        res.status(200).json(comments)
+   /*     res.render('homepage', {
+          comments,
+          logged_in: req.session.logged_in,
+        });*/
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+//This route renders users page for login
+router.get("/api/users/login", async(req, res) =>{
+    try {
+   /*     
+        res.render('login', {login});*/
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+//This route renders users page for login
+router.get("api/users/signup", async(req, res) =>{
+    try {
+   /*     res.render('login', {signup});*/
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 module.exports = router;
