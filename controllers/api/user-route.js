@@ -19,11 +19,32 @@ router.post("/login", async (req, res) => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
 
-            res.json({ user: userData, message: "You are now logged in!" });
+            res.status(200).json({ user: userData, message: "You are now logged in!" });
         });
     } catch (err) {
         res.status(500).json(err);
     }
+});
+
+router.post("/signup", async (req, res) => {
+    try {
+        /*This part checks if the user name is taken before or not. 
+        If it's taken, it doesn't let user sign up withis user name*/
+        const userCheckData = await User.findOne({where: { user_name: req.body.user_name }});
+        if (userCheckData) {
+            res.status(404).json({ message: "This user name is taken. Please choose another one!" });
+            return;
+        }
+        const userData = await User.create(req.body);
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+
+            res.status(200).json({ user: userData, message: "You are now logged in!" });
+        });
+      } catch (err) {
+        res.status(400).json(err);
+      }
 });
 
 module.exports = router;
