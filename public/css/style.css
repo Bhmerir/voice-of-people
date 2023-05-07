@@ -1,0 +1,161 @@
+:root {
+  --primary: #1451AA;
+  --secondary: #5290E7;
+  --tertiary: #EAB179;
+  --quatrinary: #DCE6F4;
+  --light: white;
+  --dark: #182c23;
+  --error: rgb(228, 46, 1);
+  --border-radius: 0.3rem;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background-color: var(--quatrinary);
+}
+
+a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+header {
+  padding: 40px;
+  text-align: center;
+  background: var(--primary);
+  color: var(--light);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+nav {
+  display: flex;
+  background-color: var(--secondary);
+}
+
+nav a {
+  color: var(--light);
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 200px;
+  top: 120px;
+  width: 100vw;
+}
+
+.login-card {
+  justify-content: center;
+  margin: 0 0 20px 0;
+  flex: 0 0 50%;
+  width: 800px;
+  border: 3px solid var(--dark);
+  border-radius: var(--border-radius);
+  border-style: double;
+  border-width: thick;
+  background-color: var(--secondary);
+  color: var(--light);
+}
+
+#login-header {
+  background-color: var(--primary);
+  color: var(--light);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+
+#username,
+#password,
+#login-btn{
+  margin-left: 15px;
+  width: 760px;
+  height: 40px;
+  border-radius: 5px;
+}
+#username-label,
+#password-label{
+  padding-left: 15px;
+  padding-bottom: 5px;
+}
+
+#login-btn{
+  background-color:var(--primary);
+  color: var(--light);
+  cursor: pointer;
+  margin-bottom: 10px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+#login-btn:hover{
+  box-shadow: 5px 5px 5px var(--quatrinary);
+}
+
+#login-anchor{
+  font:bolder;
+  font-size: 20px;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+#post-header{
+  display: inline-flex;
+  width: 100%;
+  height: 50px;
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+#post:hover{
+  color: var(--tertiary)
+}
+
+.custom-card{
+  display:block;
+  margin-bottom: 10px;
+  border: solid;
+  width: 80vw;
+}
+
+#title{
+  padding-top: 10px;
+  padding-left: 20px;
+  width:100vw;
+}
+#username{
+  padding-top: 10px;
+  right: 20px;
+}
+
+.post{
+  left:100px;
+}
+.custom-card-body{
+  height: 80px;
+  color: var(--dark);
+  padding-left: 20px;
+  padding-top: 10px;
+}
+

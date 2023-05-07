@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 router.get('/', async(req, res) =>{
     try {
         const postData = await Post.findAll({
-            attributes: ['title', 'content', 'date_created'],
+           // attributes: ['title', 'content', 'date_created'],
             include: [{ 
                 model: User,
                 attributes: ['user_name']
@@ -15,11 +15,11 @@ router.get('/', async(req, res) =>{
             order: [['date_created', 'DESC']],
         });
         const posts = postData.map((post) => post.get({ plain: true }));
-        res.status(200).json(posts)
-   /*     res.render('homepage', {
+      //  res.status(200).json(posts)
+        res.render('homepage', {
           posts,
           logged_in: req.session.logged_in,
-        });*/
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -98,18 +98,20 @@ router.get("/api/comments/:id", withAuth, async(req, res) =>{
 
 //This route renders users page for login
 router.get("/api/users/login", async(req, res) =>{
-    try {
-   /*     
-        res.render('login', {login});*/
+    try {  
+        //if login is true, login page is shown else signup page is shown
+        let login = {"login": true} ; 
+        res.render('login', login);
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
 //This route renders users page for login
-router.get("api/users/signup", async(req, res) =>{
+router.get("/api/users/signup", async(req, res) =>{
     try {
-   /*     res.render('login', {signup});*/
+        let login = {"login": false} ;
+        res.render('login', login);
     } catch (err) {
         res.status(500).json(err);
     }
