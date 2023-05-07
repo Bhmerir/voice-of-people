@@ -35,9 +35,7 @@ router.get('/dashboard', withAuth, async(req, res) =>{
             where: { user_id: req.session.user_id},
             order: [['date_created', 'DESC']],
         });
-        console.log(postData)
         const posts = postData.map((post) => post.get({ plain: true }));
-    //    res.status(200).json(posts)
         res.render('dashboard', {
           posts,
           logged_in: req.session.logged_in,
@@ -114,6 +112,15 @@ router.get("/api/users/signup", async(req, res) =>{
     } catch (err) {
         res.status(500).json(err);
     }
+});
+
+//This route renders add-post page when the button of new post is clicked
+router.get('/api/users/new-post', async(req, res) =>{
+    try {
+        res.render('add-post',{logged_in: req.session.logged_in});
+    } catch (err) {
+        res.status(500).json(err);
+    }  
 });
 
 module.exports = router;

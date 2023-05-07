@@ -13,11 +13,11 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
-//After 5 minutes, the cookie is expired
+//After 1 minutes, the cookie is expired
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-    maxAge: 3000,
+  //  maxAge: 60000,
   },
   resave: false,
   saveUninitialized: false,

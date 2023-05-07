@@ -14,7 +14,6 @@ const loginSignUpHandler = async (event) => {
         return;
     }
     let response;
-    console.log("hello",dataLogin)
     if(dataLogin == "login" ){
         response = await fetch('/api/users/login', {
             method: 'POST',
@@ -36,7 +35,7 @@ const loginSignUpHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
     }
-    console.log(response.ok)
+
     if (response.ok) {
         document.location.replace('/');
     } else {
