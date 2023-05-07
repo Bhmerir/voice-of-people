@@ -13,12 +13,10 @@
             <input type="text" id="password" name="password"><br><br>
             {{#if login}}
                 <button class="btn btn-primary" type="submit" id="login-btn" data-login="login">Login</button>
-                {{!-- <input type="submit" value="Login" id="login-btn" data-login="login"> --}}
                 <a href="/api/users/signup" id="login-anchor">Sign Up Instead</p>   
             {{/if}}
             {{#unless login}}
             <button class="btn btn-primary" type="submit" id="login-btn" data-login="sign-up">Sign Up</button>
-                {{!-- <input type="submit" value="Sign Up" id="login-btn" data-login="sign-up"> --}}
                 <a href="/api/users/login" id="login-anchor">Login Instead</p> 
             {{/unless}}
         </form> 

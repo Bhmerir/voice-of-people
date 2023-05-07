@@ -49,8 +49,9 @@ router.post("/signup", async (req, res) => {
       }
 });
 
-//This post is responsible for logingout
+//This post is responsible for logging out
 router.post('/logout', (req, res) => {
+    console.log(req.session.logged_in);
     if (req.session.logged_in) {
       req.session.destroy(() => {
         res.status(204).end();

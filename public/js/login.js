@@ -14,7 +14,8 @@ const loginSignUpHandler = async (event) => {
         return;
     }
     let response;
-    if(dataLogin === "login" ){
+    console.log("hello",dataLogin)
+    if(dataLogin == "login" ){
         response = await fetch('/api/users/login', {
             method: 'POST',
             body: JSON.stringify({
@@ -40,10 +41,10 @@ const loginSignUpHandler = async (event) => {
         document.location.replace('/');
     } else {
         if(dataLogin === "login" ){
-            alert('Failed to log in.');
+            alert('Failed to login. Username or Passord is not correct.');
         }
         else{
-            alert('Failed to sign up.'); 
+            alert('Failed to signup.'); 
         }
     }
 };
