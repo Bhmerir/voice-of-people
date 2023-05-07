@@ -13,21 +13,29 @@ const loginSignUpHandler = async (event) => {
         alert('Please Enter the password.');
         return;
     }
+    let response;
     if(dataLogin === "login" ){
-        const response = await fetch('/api/users/login', {
+        response = await fetch('/api/users/login', {
             method: 'POST',
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({
+                 user_name: username, 
+                 password: password 
+            }),
             headers: { 'Content-Type': 'application/json' },
         });
     }
     else{
-        const response = await fetch('/api/users/signup', {
+        response = await fetch('/api/users/signup', {
             method: 'POST',
-            body: JSON.stringify({ username, password }),
+            method: 'POST',
+            body: JSON.stringify({
+                 user_name: username, 
+                 password: password 
+            }),
             headers: { 'Content-Type': 'application/json' },
         });
     }
-  
+    console.log(response.ok)
     if (response.ok) {
         document.location.replace('/');
     } else {
