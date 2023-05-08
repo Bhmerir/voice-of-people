@@ -15,7 +15,7 @@
   </header>
   <nav>
     <a href="/">Home</a>
-    <a href="/dashboard">Dashboard</a>
+    <a href="/dashboard" id="dashboard" data-login="{{logged_in}}">Dashboard</a>
     {{#if logged_in}}
     <a href="#" id="logout">Logout</a>
     {{else}}
@@ -29,6 +29,8 @@
   </main>
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+  {{else}}
+  <script src="/js/check-login.js"></script>
   {{/if}}
   <script src="/js/idle-handling.js"></script>
 </body>
