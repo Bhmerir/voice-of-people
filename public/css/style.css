@@ -184,7 +184,8 @@ nav a:hover {
   color: var(--light);
   padding-left: 20px;
   padding-top: 10px;
-  border:solid;
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
 }
 
 #dashoard-post
