@@ -10,14 +10,14 @@
             <label for="username" id="username-label">Username: </label><br>
             <input type="text" id="username" name="username" ><br>
             <label for="password" id="password-label">Password: </label><br>
-            <input type="text" id="password" name="password"><br><br>
+            <input type="password" id="password" name="password"><br><br>
             {{#if login}}
                 <button class="btn btn-primary" type="submit" id="login-btn" data-login="login">Login</button>
-                <a href="/api/users/signup" id="login-anchor">Sign Up Instead</p>   
+                <a href="/signup" id="login-anchor">Sign Up Instead</p>   
             {{/if}}
             {{#unless login}}
             <button class="btn btn-primary" type="submit" id="login-btn" data-login="sign-up">Sign Up</button>
-                <a href="/api/users/login" id="login-anchor">Login Instead</p> 
+                <a href="/login" id="login-anchor">Login Instead</p> 
             {{/unless}}
         </form> 
     </section>

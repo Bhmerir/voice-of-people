@@ -19,7 +19,7 @@ const addCommentHandler = async (event) => {
     });
 
     if (response.ok) {
-        document.location.replace(`/api/comments/${postId}`);
+        document.location.replace(`/comments/${postId}`);
     } else {
         alert('Failed to add new post.'); 
     }

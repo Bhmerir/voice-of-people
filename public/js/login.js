@@ -40,10 +40,10 @@ const loginSignUpHandler = async (event) => {
         document.location.replace('/');
     } else {
         if(dataLogin === "login" ){
-            alert('Failed to login. Username or Passord is not correct.');
+            alert('Username or Password is not correct.');
         }
         else{
-            alert('Failed to signup.'); 
+            alert('Username has been taken. Please choose another one!'); 
         }
     }
 };

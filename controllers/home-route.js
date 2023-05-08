@@ -45,7 +45,7 @@ router.get('/dashboard', withAuth, async(req, res) =>{
 });
 
 //This route shows a specific post of a specific user 
-router.get("/api/posts/:id", withAuth, async(req, res) =>{
+router.get("/posts/:id", withAuth, async(req, res) =>{
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [{ 
@@ -65,7 +65,7 @@ router.get("/api/posts/:id", withAuth, async(req, res) =>{
 });
 
 //This route shows all comments of a specific post 
-router.get("/api/comments/:id", withAuth, async(req, res) =>{
+router.get("/comments/:id", withAuth, async(req, res) =>{
     try {
         const commentData = await Post.findByPk(req.params.id, {
             include: [{ 
@@ -91,7 +91,7 @@ router.get("/api/comments/:id", withAuth, async(req, res) =>{
 });
 
 //This route renders users page for login
-router.get("/api/users/login", async(req, res) =>{
+router.get("/login", async(req, res) =>{
     try {  
         //if login is true, login page is shown else signup page is shown
         let login = {"login": true} ; 
@@ -102,7 +102,7 @@ router.get("/api/users/login", async(req, res) =>{
 });
 
 //This route renders users page for login
-router.get("/api/users/signup", async(req, res) =>{
+router.get("/signup", async(req, res) =>{
     try {
         let login = {"login": false} ;
         res.render('login', login);
@@ -112,7 +112,7 @@ router.get("/api/users/signup", async(req, res) =>{
 });
 
 //This route renders add-post page when the button of new post is clicked
-router.get('/api/users/new-post', async(req, res) =>{
+router.get('/new-post', async(req, res) =>{
     try {
         res.render('add-post',{logged_in: req.session.logged_in});
     } catch (err) {
