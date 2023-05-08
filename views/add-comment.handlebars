@@ -1,0 +1,30 @@
+<section id="comment-sec">
+    <section class="custom-comment-card">
+        <section id="post-header">
+            <p id="title">{{comments.title}}</p>
+            <p id="username">Posted by {{comments.user.user_name}} on {{comments.date_created}}</p>
+        </section>
+
+        <div class="custom-card-body">
+        <div>{{comments.content}}</div>
+        </div>
+    </section>
+    {{#if comments.comments.length}}
+        <section id="comment-container">
+            {{#each comments.comments as |comment|}}
+                {{> comment-detail}}
+            {{/each}}
+        </section>
+    {{/if}}
+    <section class="add-comment-container">
+        <section class="add-comment-card">
+            <form class="form add-comment-form ">
+                <h3 id="add-comment-header">New Comment</h3>
+                <label for="add-comment" id="add-comment-label">Comment: </label><br>
+                <textarea id="add-comment" name="add-comment" data-id="{{comments.id}}" cols="150" rows="5"></textarea><br><br>
+                <button class="btn btn-primary" type="submit" id="add-comment-btn">Add Comment</button>
+            </form> 
+        </section>
+    </section>
+</section>
+<script src="/js/add-comment.js"></script>

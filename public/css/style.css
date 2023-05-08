@@ -5,7 +5,6 @@
   --quatrinary: #DCE6F4;
   --light: white;
   --dark: #182c23;
-  --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
 }
 
@@ -92,7 +91,7 @@ nav a:hover {
   margin-left: 15px;
   width: 760px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
 }
 #username-label,
 #password-label{
@@ -103,6 +102,7 @@ nav a:hover {
 #login-btn,
 #new-post-btn,
 #add-post-btn,
+#add-comment-btn,
 #edit-post-btn,
 #delete-post-btn{
   background-color:var(--primary);
@@ -116,6 +116,7 @@ nav a:hover {
 #login-btn:hover,
 #new-post-btn:hover,
 #add-post-btn:hover,
+#add-comment-btn:hover,
 #edit-post-btn:hover,
 #delete-post-btn:hover{
   box-shadow: 5px 5px 5px var(--quatrinary);
@@ -146,6 +147,7 @@ nav a:hover {
   margin-bottom: 10px;
   border: solid;
   width: 80vw;
+  border-radius: var(--border-radius);
 }
 
 #title{
@@ -172,7 +174,7 @@ nav a:hover {
   margin-left: 15px;
   width: 300px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
 }
 /*dashboard*/
 .dashboard-card{
@@ -209,8 +211,9 @@ nav a:hover {
   margin-left: 450px;
   background-color:var(--secondary);
 }
-/*add and edit/delete post*/
+/*add post , edit/delete post, and add comment*/
 .add-post-container,
+.add-comment-container,
 .edit-post-container {
   display: flex;
   flex-flow: column wrap;
@@ -222,6 +225,7 @@ nav a:hover {
 }
 
 .add-post-card,
+.add-comment-card,
 .edit-post-card
  {
   justify-content: center;
@@ -237,6 +241,7 @@ nav a:hover {
 }
 
 #add-post-header,
+#add-comment-header,
 #edit-post-header
  {
   background-color: var(--primary);
@@ -252,14 +257,17 @@ nav a:hover {
 #edit-post-title,
 #edit-post-content,
 #edit-post-btn,
-#delete-post-btn{
+#delete-post-btn,
+#add-comment,
+#add-comment-btn{
   margin-left: 15px;
   width: 760px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
 }
 #add-post-title-label,
 #add-post-content-label,
+#add-comment-label,
 #edit-post-title-label,
 #edit-post-content-label{
   padding-left: 15px;
@@ -271,3 +279,62 @@ nav a:hover {
   height: 150px;
 }
 
+/* add comment*/
+#comment-container{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.add-comment-container{
+  margin-top: 0;
+}
+.custom-comment-card{
+  display:block;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 150px;
+  border: solid;
+  width: 80vw;
+  border-radius: var(--border-radius);
+}
+
+.add-comment-card
+{
+  width: 80vw;
+}
+
+#add-comment,
+#add-comment-btn{
+  width: 77vw;
+}
+
+#add-comment{
+  height: 120px;
+}
+
+#previous-comment-section{
+  width: 80vw;
+  height: 100px;
+  background-color: var(--secondary);
+  border: solid;
+  margin-bottom: 10px;
+  border-radius: var(--border-radius);
+  margin-left: 150px;
+}
+
+#previous-comment{
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+#previous-comment-username{
+  padding-left: 15px;
+}
+
+
+#previous-comment-username{
+  color: var(--light)
+}
+
+#new-posts-block{
+  width: 100vw;
+}

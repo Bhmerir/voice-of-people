@@ -1,5 +1,6 @@
 const editPostTitleEl = document.querySelector('#edit-post-title')
 const postId = editPostTitleEl.getAttribute('data-id');
+//This function is responsible for editing a post by getting its id from attribute of data-id
 const editPostHandler = async (event) => {
     event.preventDefault();
 
@@ -29,6 +30,7 @@ const editPostHandler = async (event) => {
         alert('Failed to edit post.'); 
     }
 };
+//This function is responsible for deleting a post by getting its id from attribute of data-id
 const deletePostHandler = async (event) => {
     event.preventDefault();
 

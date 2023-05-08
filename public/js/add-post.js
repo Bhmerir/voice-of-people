@@ -3,7 +3,7 @@ const addPostHandler = async (event) => {
   
     const addPostTitle = document.querySelector('#add-post-title').value.trim();
     const addPostContent = document.querySelector('#add-post-content').value.trim();
-    const addPostBtn = document.querySelector('#add-post-btn');
+ //   const addPostBtn = document.querySelector('#add-post-btn');
     if(!addPostTitle){
         alert('Please Enter the title.');
         return;
