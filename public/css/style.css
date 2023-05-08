@@ -102,7 +102,9 @@ nav a:hover {
 
 #login-btn,
 #new-post-btn,
-#add-post-btn{
+#add-post-btn,
+#edit-post-btn,
+#delete-post-btn{
   background-color:var(--primary);
   color: var(--light);
   cursor: pointer;
@@ -113,7 +115,9 @@ nav a:hover {
 }
 #login-btn:hover,
 #new-post-btn:hover,
-#add-post-btn:hover{
+#add-post-btn:hover,
+#edit-post-btn:hover,
+#delete-post-btn:hover{
   box-shadow: 5px 5px 5px var(--quatrinary);
 }
 
@@ -266,7 +270,4 @@ nav a:hover {
 #edit-post-content{
   height: 150px;
 }
-#delete-post-btn{
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+

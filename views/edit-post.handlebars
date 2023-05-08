@@ -3,11 +3,11 @@
         <form class="form edit-post-form ">
             <h3 id="edit-post-header">Edit / Delete Post</h3>
             <label for="edit-post-title" id="edit-post-title-label">Title: </label><br>
-            <input type="text" id="edit-post-title" name="edit-post-title" value={{post.title}} ><br>
+            <input type="text" id="edit-post-title" name="edit-post-title" data-id="{{post.id}}" value="{{post.title}}" ><br>
             <label for="edit-post-content" id="edit-post-content-label">Content: </label><br>
             <textarea id="edit-post-content" name="edit-post-content" cols="150" rows="5">{{post.content}}</textarea><br><br>
-            <button class="btn btn-primary" type="submit" id="edit-post-btn">Edit Post</button>
-            <button class="btn btn-primary" type="submit" id="delete-post-btn">Delete Post</button>
+            <button class="btn btn-primary" id="edit-post-btn" >Edit Post</button>
+            <button class="btn btn-primary" id="delete-post-btn">Delete Post</button>
         </form> 
     </section>
 </section>
