@@ -207,7 +207,7 @@ nav a:hover {
 }
 /*add and edit/delete post*/
 .add-post-container,
-.edit-post-content {
+.edit-post-container {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -264,5 +264,9 @@ nav a:hover {
 
 #add-post-content,
 #edit-post-content{
-  height: 200px;
+  height: 150px;
+}
+#delete-post-btn{
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

@@ -55,12 +55,13 @@ router.get("/api/posts/:id", withAuth, async(req, res) =>{
             }],
             order: [['date_created', 'DESC']],
         });
-        console.log(postData)
-        res.status(200).json(postData)
-   /*     res.render('homepage', {
-          postData,
+        const post = postData.get({ plain: true });
+        console.log(post)
+   //     res.status(200).json(postData)
+        res.render('edit-post', {
+          post,
           logged_in: req.session.logged_in,
-        });*/
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -124,12 +125,12 @@ router.get('/api/users/new-post', async(req, res) =>{
 });
 
 //This route renders edit-post page when a post in dashboard is clicked
-router.get('/api/users/edit-post', async(req, res) =>{
+/*router.get('/api/posts/:id', async(req, res) =>{
     try {
         res.render('edit-post',{logged_in: req.session.logged_in});
     } catch (err) {
         res.status(500).json(err);
     }  
-});
+});*/
 
 module.exports = router;
