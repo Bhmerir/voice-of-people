@@ -205,8 +205,9 @@ nav a:hover {
   margin-left: 450px;
   background-color:var(--secondary);
 }
-/*add post*/
-.add-post-container {
+/*add and edit/delete post*/
+.add-post-container,
+.edit-post-content {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -216,7 +217,9 @@ nav a:hover {
   width: 100vw;
 }
 
-.add-post-card {
+.add-post-card,
+.edit-post-card
+ {
   justify-content: center;
   margin: 0 0 20px 0;
   flex: 0 0 50%;
@@ -229,7 +232,9 @@ nav a:hover {
   color: var(--light);
 }
 
-#add-post-header {
+#add-post-header,
+#edit-post-header
+ {
   background-color: var(--primary);
   color: var(--light);
   padding-top: 15px;
@@ -239,18 +244,25 @@ nav a:hover {
 
 #add-post-title,
 #add-post-content,
-#add-post-btn{
+#add-post-btn,
+#edit-post-title,
+#edit-post-content,
+#edit-post-btn,
+#delete-post-btn{
   margin-left: 15px;
   width: 760px;
   height: 40px;
   border-radius: 5px;
 }
 #add-post-title-label,
-#add-post-content-label{
+#add-post-content-label,
+#edit-post-title-label,
+#edit-post-content-label{
   padding-left: 15px;
   padding-bottom: 5px;
 }
 
-#add-post-content{
+#add-post-content,
+#edit-post-content{
   height: 200px;
 }

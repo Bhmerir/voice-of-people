@@ -123,4 +123,13 @@ router.get('/api/users/new-post', async(req, res) =>{
     }  
 });
 
+//This route renders edit-post page when a post in dashboard is clicked
+router.get('/api/users/edit-post', async(req, res) =>{
+    try {
+        res.render('edit-post',{logged_in: req.session.logged_in});
+    } catch (err) {
+        res.status(500).json(err);
+    }  
+});
+
 module.exports = router;
