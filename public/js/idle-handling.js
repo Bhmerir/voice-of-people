@@ -2,7 +2,7 @@
 function resetTimer() {
     console.log("reset")
     window.clearTimeout(timer);
-    timer = window.setTimeout(endSession, 1 * 60 * 1000); 
+    timer = window.setTimeout(endSession, 3 * 60 * 1000); 
 }
 
 //This function sends the logout request to server to end session
@@ -26,4 +26,4 @@ document.addEventListener("click", resetTimer);
 document.addEventListener("scroll", resetTimer);
 
 let timer;
-timer = window.setTimeout(endSession, 1 * 60 * 1000); // 3 minutes
+timer = window.setTimeout(endSession, 3 * 60 * 1000); // 3 minutes

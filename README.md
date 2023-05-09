@@ -64,7 +64,7 @@ This application is capable of the following actions:
 
 ---
 
-![Mock up Gif Image]()
+![Mock up Gif Image](./image/voice-of-people.gif)
 
 <br>
 
